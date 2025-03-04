@@ -404,7 +404,8 @@ TEST_CASE("McapReader::readMessages()", "[reader]") {
     auto status = reader.open(buffer);
     requireOk(status);
 
-    for (const auto& msg : reader.readMessages()) {
+    auto read_result = reader.readMessages();
+    for (const auto& msg : read_result) {
       FAIL("Shouldn't have gotten a message: topic " + msg.channel->topic + ", schema " +
            msg.schema->name);
     }

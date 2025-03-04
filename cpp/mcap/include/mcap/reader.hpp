@@ -716,6 +716,7 @@ struct MCAP_PUBLIC LinearMessageView {
   Iterator begin();
   Iterator end();
 
+  std::size_t size() const noexcept;
 private:
   McapReader& mcapReader_;
   ByteOffset dataStart_;

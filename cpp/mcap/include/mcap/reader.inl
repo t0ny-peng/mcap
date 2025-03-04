@@ -1622,6 +1622,10 @@ LinearMessageView::Iterator LinearMessageView::end() {
   return LinearMessageView::Iterator();
 }
 
+std::size_t LinearMessageView::end() const noexcept {
+  return static_cast<std::size_t>(dataEnd_ - dataStart_);
+}
+
 // LinearMessageView::Iterator /////////////////////////////////////////////////
 
 LinearMessageView::Iterator::Iterator(LinearMessageView& view)
